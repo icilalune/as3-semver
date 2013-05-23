@@ -1,8 +1,8 @@
 # as3-semver
 
-A library for semantic versioning ([semver](http://semver.org/)) in AS3.
+Compare version numbers and ranges in AS3 with ease with this port of [node-semver](https://github.com/isaacs/node-semver). For more information on what semantic versioning is and how to use it, see [semver.org](http://semver.org/).
 
-This is a port of [node-semver](https://github.com/isaacs/node-semver). 100% of the original 856 tests pass.
+100% of the original 856 tests pass.
 
 ### Usage
 
@@ -32,17 +32,17 @@ SemVer.valid('a.b.c') // null
   <tr>
     <td><code>lt(v1, v2)</code></td>
     <td align="center">boolean</td>
-    <td>Returns true if v1 < v2.</td>
+    <td>Returns true if v1 &lt; v2.</td>
   </tr>
   <tr>
     <td><code>SemVer.gte(v1, v2)</code></td>
     <td align="center">boolean</td>
-    <td>Returns true if v1 >= v2.</td>
+    <td>Returns true if v1 &gt;= v2.</td>
   </tr>
   <tr>
     <td><code>lte(v1, v2)</code></td>
     <td align="center">boolean</td>
-    <td>Returns true if v1 <= v2.</td>
+    <td>Returns true if v1 &lt;= v2.</td>
   </tr>
   <tr>
     <td><code>eq(v1, v2)</code></td>
@@ -57,7 +57,7 @@ SemVer.valid('a.b.c') // null
   <tr>
     <td><code>gt(v1, op, v2)</code></td>
     <td align="center">boolean</td>
-    <td>Compares two versions. The "op" argument should be one of the following: ">", "<", ">=", "<=", "==", "!=", "===", or "!==".</td>
+    <td>Compares two versions. The "op" argument should be one of the following: "&gt;", "&lt;", "&gt;=", "&lt;=", "==", "!=", "===", or "!==".</td>
   </tr>
   <tr>
     <td><code>satisfies(version, range)</code></td>
@@ -67,7 +67,7 @@ SemVer.valid('a.b.c') // null
   <tr>
     <td valign="top"><code>compare(v1, v2)</code></td>
     <td align="center" valign="top">int</td>
-    <td>Compares two versions and returns an integer result (0: equal, 1: v1 > v2, -1: v1 < v2). Useful for sorting versions.</td>
+    <td>Compares two versions and returns an integer result (0: equal, 1: v1 &gt; v2, -1: v1 &lt; v2). Useful for sorting versions.</td>
   </tr>
 </table>
 
