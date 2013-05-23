@@ -176,17 +176,18 @@ package {
 			return stringify(version_parsed);
 		}
 
-		public static function valid(version):String {
+		public static function valid(version:*):String {
 			if (typeof version !== "string") return null;
 			return parse(version) ? version.replace(/^\s+|\s+$/g, "").replace(/^[v=]+/, "") : null;
 		}
 
-		public static function validPackage(version):String {
+		public static function validPackage(version:*):String {
 			if (typeof version !== "string") return null;
 			return version.match(expressions.parsePackage) && version.replace(/^\s+|\s+$/g, "");
 		}
 
-		public static function validRange(range):String {
+		public static function validRange(range:*):String {
+			if (typeof range !== "string") return null;
 			range = replaceStars(range);
 			var c:Array = toComparators(range);
 			return (c.length === 0) ? null : c.map(function(c, ...args):String { return c.join(" ") }).join("||");

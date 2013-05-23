@@ -35,7 +35,7 @@ SemVer.valid('a.b.c') // null
     <td>Returns true if v1 &lt; v2.</td>
   </tr>
   <tr>
-    <td><code>SemVer.gte(v1, v2)</code></td>
+    <td><code>gte(v1, v2)</code></td>
     <td align="center">boolean</td>
     <td>Returns true if v1 &gt;= v2.</td>
   </tr>
