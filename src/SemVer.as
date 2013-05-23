@@ -6,7 +6,6 @@
  * This implementation is a *hair* less strict in that it allows
  * v1.2.3 things, and also tags that don't begin with a char.
  *
- *
  * Permission is hereby granted, free of charge, to any person
  * obtaining a copy of this software and associated documentation
  * files (the "Software"), to deal in the Software without
@@ -190,7 +189,7 @@ package {
 			if (typeof range !== "string") return null;
 			range = replaceStars(range);
 			var c:Array = toComparators(range);
-			return (c.length === 0) ? null : c.map(function(c, ...args):String { return c.join(" ") }).join("||");
+			return (c.length === 0) ? null : c.map(function(c:Array, ...args):String { return c.join(" ") }).join("||");
 		}
 
 		// comparison methods
@@ -250,7 +249,7 @@ package {
 
 		public static function maxSatisfying(versions:Array, range:String):String {
 			return versions
-				.filter(function(v, ...args):Boolean { return satisfies(v, range); })
+				.filter(function(v:String, ...args):Boolean { return satisfies(v, range); })
 				.sort(compare)
 				.pop() || null;
 		}
@@ -278,7 +277,7 @@ package {
 		// misc utility methods
 		// - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
-		public static function num(v):int {
+		public static function num(v:*):int {
 			return v === undefined ? -1 : parseInt((v||"0").replace(/[^0-9]+/g, ""), 10);
 		}
 
@@ -325,7 +324,7 @@ package {
 					return orchunk
 						.replace(/^\s+|\s+$/g, "")
 						.split(/\s+/)
-						.filter(function(c:String, ...args):Boolean { return c.match(expressions.validComparator); })
+						.filter(function(c:String, ...args):Boolean { return expressions.validComparator.test(c); })
 				})
 				.filter(function(cc:Array, ...args):Boolean { return cc && cc.length > 0; });
 		}
