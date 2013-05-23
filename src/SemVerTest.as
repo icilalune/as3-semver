@@ -76,7 +76,7 @@ package {
 			if (!a && !b) return true;
 
 			// arrays
-			if (a instanceof Array) {
+			if (a is Array) {
 				if (a.length !== b.length) return false;
 				for (var i:int = 0; i < a.length; i++) {
 					if (!equivalent(a[i], b[i])) return false;
